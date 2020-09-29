@@ -21,7 +21,30 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Checkstyle for Java
+        uses: dbelyaev/action-checkstyle@v0.2.0
+        with:
+         github_token: # optional, default is ${{ github.token }}
+         workdir: # optional, default is .
+         level: # optional, default is info
+         reporter: # optional, default is github-pr-check
+    # Filtering mode for the reviewdog command [added, diff_context, file, nofilter].
+Default is added.
 
+    filter_mode: # optional, default is added
+    # Exit code for reviewdog when errors are found [true, false]
+Default is `false`.
+
+    fail_on_error: # optional, default is false
+    # Additional reviewdog flags
+    reviewdog_flags: # optional, default is 
+    # Checkstyle configuration specifies which ruleset to apply during scan.
+There are two built-in configurations in checkstyle: [google_checks.xml, sun_checks.xml].
+google_checks.xml configures Checkstyle for the Google coding conventions (https://google.github.io/styleguide/javaguide.html)
+sun_checks.xml configures Checkstyle for the Sun coding conventions (https://www.oracle.com/java/technologies/javase/codeconventions-contents.html)
+
+    checkstyle_config: # default is google_checks.xml
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
