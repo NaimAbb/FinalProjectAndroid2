@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="130dp"
+        android:layout_margin="-20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="left"
+                android:text="TextView"
+                android:textColor="#499B49"
+                app:layout_constraintStart_toEndOf="@+id/imageNews"
+                app:layout_constraintTop_toTopOf="@+id/imageNews" />
+
+            <TextView
+                android:id="@+id/timeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="right"
+                android:text="TextView"
+                android:textColor="#ACA8A8"
+                app:layout_constraintStart_toStartOf="@+id/nameTv"
+                app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+            <TextView
+                android:id="@+id/textNewsTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="start"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="TextView"
+                android:textAlignment="textStart"
+                android:textColor="#201F1F"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.916"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+            <ImageView
+                android:id="@+id/imageNews"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[8]" />
+
+            <com.sackcentury.shinebuttonlib.ShineButton
+                android:id="@+id/shinestar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@android:color/darker_gray"
+                app:allow_random_color="false"
+                app:btn_color="@android:color/darker_gray"
+                app:btn_fill_color="@android:color/holo_orange_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:siShape="@raw/star" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

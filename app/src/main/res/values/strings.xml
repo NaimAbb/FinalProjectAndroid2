@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FinalProjectAndroid2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- time ago strings -->
+    <string name="just_now">just now</string>
+    <string name="time_ago">%s ago</string>
+    <string name="yesterday">yesterday</string>
+</resources>
