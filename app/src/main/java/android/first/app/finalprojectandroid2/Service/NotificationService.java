@@ -44,11 +44,11 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class NotificationService extends Service {
-    FirebaseFirestore firestore = null;
-    RequestQueue requestQueue = null;
-    ArrayList<News> list = new ArrayList<>();
-    int id = 0;
-    boolean isRunning = true;
+    private FirebaseFirestore firestore = null;
+    private RequestQueue requestQueue = null;
+    private ArrayList<News> list = new ArrayList<>();
+    private int id = 0;
+    private boolean isRunning = true;
 
 
     public NotificationService() {
@@ -282,7 +282,7 @@ public class NotificationService extends Service {
         super.onDestroy();
         isRunning = false;
     }
-    public  ArrayList<News> getArabWorldNews() {
+    private  ArrayList<News> getArabWorldNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> ArabWorldNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/arab-world";
@@ -385,7 +385,7 @@ public class NotificationService extends Service {
         return ArabWorldNews;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getSportNews() {
+    private  ArrayList<News> getSportNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> SportNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/sport";
@@ -490,7 +490,7 @@ public class NotificationService extends Service {
         return SportNews;
     }
     //////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getConomyNews() {
+    private  ArrayList<News> getConomyNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> ConomyNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/economy";
@@ -596,7 +596,7 @@ public class NotificationService extends Service {
 
     }
     //////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getEducationNews() {
+    private  ArrayList<News> getEducationNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> EducationNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/education";
@@ -701,7 +701,7 @@ public class NotificationService extends Service {
         return EducationNews;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getPressNews() {
+    private  ArrayList<News> getPressNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> PressNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/press";
@@ -806,7 +806,7 @@ public class NotificationService extends Service {
         return PressNews;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getScienceNews(){
+    private  ArrayList<News> getScienceNews(){
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> ScienceNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/science";
@@ -911,7 +911,7 @@ public class NotificationService extends Service {
         return ScienceNews;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getRealestateNews() {
+    private  ArrayList<News> getRealestateNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> RealestateNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/realestate";
@@ -1017,7 +1017,7 @@ public class NotificationService extends Service {
 
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    public  ArrayList<News> getArtsNews() {
+    private  ArrayList<News> getArtsNews() {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final ArrayList<News> ArtsNews=new ArrayList<>();
         String url = "https://aawsat.com/feed/arts";

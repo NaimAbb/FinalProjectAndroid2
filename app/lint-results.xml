@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 3.3.2">
+
+    <issue
+        id="GradleCompatible"
+        severity="Fatal"
+        message="All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 28.0.0, 27.1.0. Examples include `com.android.support:animated-vector-drawable:28.0.0` and `com.android.support:exifinterface:27.1.0`"
+        category="Correctness"
+        priority="8"
+        summary="Incompatible Gradle Versions"
+        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`).">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"/>
+    </issue>
+
+    <issue
+        id="RecyclerView"
+        severity="Error"
+        message="Do not treat position as fixed; only use immediately and call `vh.getAdapterPosition()` to look it up later"
+        category="Correctness"
+        priority="8"
+        summary="RecyclerView Problems"
+        explanation="`RecyclerView` will **not** call `onBindViewHolder` again when the position of the item changes in the data set unless the item itself is invalidated or the new position cannot be determined.&#xA;&#xA;For this reason, you should **only** use the position parameter while acquiring the related data item inside this method, and should **not** keep a copy of it.&#xA;&#xA;If you need the position of an item later on (e.g. in a click listener), use `getAdapterPosition()` which will have the updated adapter position."
+        errorLine1="    public void onBindViewHolder(@NonNull final FavoritesAdapter.MyViewHolder vh, final int i) {"
+        errorLine2="                                                                                  ~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/FavoritesAdapter.java"
+            line="63"
+            column="83"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                        editor.commit();"
+        errorLine2="                        ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/FavoritesAdapter.java"
+            line="114"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                            editor.commit();"
+        errorLine2="                            ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/LastNewsAdapter.java"
+            line="124"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                            editor.commit();"
+        errorLine2="                            ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/LastNewsAdapter.java"
+            line="138"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                    editor.commit();"
+        errorLine2="                    ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/MainActivity.java"
+            line="60"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                    editor.commit();"
+        errorLine2="                    ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Fragments/NewsSourcesFragment.java"
+            line="82"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                            editor.commit();"
+        errorLine2="                            ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/PreviouesNewsAdapter.java"
+            line="105"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                        editor.commit();"
+        errorLine2="                        ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/PreviouesNewsAdapter.java"
+            line="113"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        severity="Warning"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        category="Correctness"
+        priority="6"
+        summary="Use `apply()` on `SharedPreferences`"
+        explanation="Consider using `apply()` instead of `commit` on shared preferences. Whereas `commit` blocks and writes its data to persistent storage immediately, `apply` will handle it in the background."
+        errorLine1="                            editor.commit();"
+        errorLine2="                            ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/PreviouesNewsAdapter.java"
+            line="121"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="CommitPrefEdits"
+        severity="Warning"
+        message="`SharedPreferences.edit()` without a corresponding `commit()` or `apply()` call"
+        category="Correctness"
+        priority="6"
+        summary="Missing `commit()` on `SharedPreference` editor"
+        explanation="After calling `edit()` on a `SharedPreference`, you must call `commit()` or `apply()` on the editor to save the results."
+        errorLine1="                            contxt.getSharedPreferences(&quot;Favorites&quot;,MODE_PRIVATE).edit().clear();"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/LastNewsAdapter.java"
+            line="119"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="CommitPrefEdits"
+        severity="Warning"
+        message="`SharedPreferences.edit()` without a corresponding `commit()` or `apply()` call"
+        category="Correctness"
+        priority="6"
+        summary="Missing `commit()` on `SharedPreference` editor"
+        explanation="After calling `edit()` on a `SharedPreference`, you must call `commit()` or `apply()` on the editor to save the results."
+        errorLine1="                            contxt.getSharedPreferences(&quot;Favorites&quot;,MODE_PRIVATE).edit().clear();"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/PreviouesNewsAdapter.java"
+            line="100"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="InvalidPackage"
+        severity="Error"
+        message="Invalid package reference in library; not included in Android: `javax.naming.directory`. Referenced from `io.grpc.internal.JndiResourceResolverFactory.JndiResourceResolver`."
+        category="Correctness"
+        priority="6"
+        summary="Package not included in Android"
+        explanation="This check scans through libraries looking for calls to APIs that are not included in Android.&#xA;&#xA;When you create Android projects, the classpath is set up such that you can only access classes in the API packages that are included in Android. However, if you add other projects to your libs/ folder, there is no guarantee that those .jar files were built with an Android specific classpath, and in particular, they could be accessing unsupported APIs such as java.applet.&#xA;&#xA;This check scans through library jars and looks for references to API packages that are not included in Android and flags these. This is only an error if your code calls one of the library classes which wind up referencing the unsupported package.">
+        <location
+            file="/Users/naimabbud/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.16.1/8a938ece0ad8d8bf77d790c502ba51ebec114aa9/grpc-core-1.16.1.jar"/>
+    </issue>
+
+    <issue
+        id="InvalidPackage"
+        severity="Error"
+        message="Invalid package reference in library; not included in Android: `javax.naming`. Referenced from `io.grpc.internal.JndiResourceResolverFactory.JndiResourceResolver`."
+        category="Correctness"
+        priority="6"
+        summary="Package not included in Android"
+        explanation="This check scans through libraries looking for calls to APIs that are not included in Android.&#xA;&#xA;When you create Android projects, the classpath is set up such that you can only access classes in the API packages that are included in Android. However, if you add other projects to your libs/ folder, there is no guarantee that those .jar files were built with an Android specific classpath, and in particular, they could be accessing unsupported APIs such as java.applet.&#xA;&#xA;This check scans through library jars and looks for references to API packages that are not included in Android and flags these. This is only an error if your code calls one of the library classes which wind up referencing the unsupported package.">
+        <location
+            file="/Users/naimabbud/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.16.1/8a938ece0ad8d8bf77d790c502ba51ebec114aa9/grpc-core-1.16.1.jar"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.&#xA;&#xA;To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html as well as follow this guide:&#xA;https://developer.android.com/distribute/best-practices/develop/target-sdk.html"
+        url="https://developer.android.com/distribute/best-practices/develop/target-sdk.html"
+        urls="https://developer.android.com/distribute/best-practices/develop/target-sdk.html,http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 28"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"
+            line="8"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `android:foreground` has no effect on API levels lower than 23 (current min is 19)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).&#xA;&#xA;This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.&#xA;&#xA;Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="        android:foreground=&quot;?attr/selectableItemBackground&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_main.xml"
+            line="28"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `android:foreground` has no effect on API levels lower than 23 (current min is 19)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).&#xA;&#xA;This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.&#xA;&#xA;Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="        android:foreground=&quot;?attr/selectableItemBackground&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/fragment_news_sources.xml"
+            line="28"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support.constraint:constraint-layout than 1.1.3 is available: 2.0.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;com.android.support.constraint:constraint-layout:1.1.3&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"
+            line="24"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.google.firebase:firebase-core than 16.0.8 is available: 17.5.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;com.google.firebase:firebase-core:16.0.8&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"
+            line="31"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.google.firebase:firebase-firestore than 18.2.0 is available: 21.7.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;com.google.firebase:firebase-firestore:18.2.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"
+            line="32"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.google.firebase:firebase-auth than 16.2.1 is available: 19.4.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;com.google.firebase:firebase-auth:16.2.1&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build.gradle"
+            line="33"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Actitvties.infoNews&quot; with &quot;.Actitvties$infoNews&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="        &lt;activity android:name=&quot;.Actitvties.infoNews&quot;>&lt;/activity>"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="16"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Service.ServiceConnection&quot; with &quot;.Service$ServiceConnection&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="            android:name=&quot;.Service.ServiceConnection&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="18"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Receiver.MyReceiverConnection&quot; with &quot;.Receiver$MyReceiverConnection&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="            android:name=&quot;.Receiver.MyReceiverConnection&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Service.NotificationService&quot; with &quot;.Service$NotificationService&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="            android:name=&quot;.Service.NotificationService&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Service.ReadNewsService&quot; with &quot;.Service$ReadNewsService&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="            android:name=&quot;.Service.ReadNewsService&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="32"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Actitvties.HomeActivity&quot; with &quot;.Actitvties$HomeActivity&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="            android:name=&quot;.Actitvties.HomeActivity&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="36"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InnerclassSeparator"
+        severity="Warning"
+        message="Use &apos;$&apos; instead of &apos;.&apos; for inner classes (or use only lowercase letters in package names); replace &quot;.Actitvties.MainActivity&quot; with &quot;.Actitvties$MainActivity&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Inner classes should use `$` rather than `.`"
+        explanation="When you reference an inner class in a manifest file, you must use &apos;$&apos; instead of &apos;.&apos; as the separator character, i.e. Outer$Inner instead of Outer.Inner.&#xA;&#xA;(If you get this warning for a class which is not actually an inner class, it&apos;s because you are using uppercase characters in your package name, which is not conventional.)"
+        errorLine1="        &lt;activity android:name=&quot;.Actitvties.MainActivity&quot; android:noHistory=&quot;true&quot;>"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="40"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="TrustAllX509TrustManager"
+        severity="Warning"
+        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers"
+        category="Security"
+        priority="6"
+        summary="Insecure TLS/SSL trust manager"
+        explanation="This check looks for X509TrustManager implementations whose `checkServerTrusted` or `checkClientTrusted` methods do nothing (thus trusting any certificate chain) which could result in insecure network traffic caused by trusting arbitrary TLS/SSL certificates presented by peers.">
+        <location
+            file="/Users/naimabbud/.gradle/daemon/4.10.1/org/jsoup/helper/HttpConnection$Response$2.class"/>
+    </issue>
+
+    <issue
+        id="TrustAllX509TrustManager"
+        severity="Warning"
+        message="`checkServerTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers"
+        category="Security"
+        priority="6"
+        summary="Insecure TLS/SSL trust manager"
+        explanation="This check looks for X509TrustManager implementations whose `checkServerTrusted` or `checkClientTrusted` methods do nothing (thus trusting any certificate chain) which could result in insecure network traffic caused by trusting arbitrary TLS/SSL certificates presented by peers.">
+        <location
+            file="/Users/naimabbud/.gradle/daemon/4.10.1/org/jsoup/helper/HttpConnection$Response$2.class"/>
+    </issue>
+
+    <issue
+        id="ExportedReceiver"
+        severity="Warning"
+        message="Exported receiver does not require permission"
+        category="Security"
+        priority="5"
+        summary="Receiver does not require permission"
+        explanation="Exported receivers (receivers which either set `exported=true` or contain an intent-filter and do not specify `exported=false`) should define a permission that an entity must have in order to launch the receiver or bind to it. Without this, any application can use this receiver."
+        errorLine1="        &lt;receiver"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="22"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ExportedService"
+        severity="Warning"
+        message="Exported service does not require permission"
+        category="Security"
+        priority="5"
+        summary="Exported service does not require permission"
+        explanation="Exported services (services which either set `exported=true` or contain an intent-filter and do not specify `exported=false`) should define a permission that an entity must have in order to launch the service or bind to it. Without this, any application can use this service."
+        errorLine1="        &lt;service"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="17"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ExportedService"
+        severity="Warning"
+        message="Exported service does not require permission"
+        category="Security"
+        priority="5"
+        summary="Exported service does not require permission"
+        explanation="Exported services (services which either set `exported=true` or contain an intent-filter and do not specify `exported=false`) should define a permission that an entity must have in order to launch the service or bind to it. Without this, any application can use this service."
+        errorLine1="        &lt;service"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="27"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ExportedService"
+        severity="Warning"
+        message="Exported service does not require permission"
+        category="Security"
+        priority="5"
+        summary="Exported service does not require permission"
+        explanation="Exported services (services which either set `exported=true` or contain an intent-filter and do not specify `exported=false`) should define a permission that an entity must have in order to launch the service or bind to it. Without this, any application can use this service."
+        errorLine1="        &lt;service"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="31"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        severity="Warning"
+        message="On SDK version 23 and up, your app data will be automatically backed up, and restored on app install. Your GCM regid will not work across restores, so you must ensure that it is excluded from the back-up set. Use the attribute `android:fullBackupContent` to specify an `@xml` resource which configures which files to backup. More info: https://developer.android.com/training/backup/autosyncapi.html"
+        category="Security"
+        priority="3"
+        summary="AllowBackup/FullBackupContent Problems"
+        explanation="The `allowBackup` attribute determines if an application&apos;s data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup&#xA;&#xA;By default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.&#xA;&#xA;This may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.&#xA;&#xA;Setting `allowBackup=&quot;false&quot;` opts an application out of both backup and restore.&#xA;&#xA;To fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)&quot;`.&#xA;&#xA;If not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup."
+        url="https://developer.android.com/training/backup/autosyncapi.html"
+        urls="https://developer.android.com/training/backup/autosyncapi.html,http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        errorLine1="    &lt;application"
+        errorLine2="     ~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="9"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ViewHolder"
+        severity="Warning"
+        message="Unconditional layout inflation from view adapter: Should use View Holder pattern (use recycled view passed into this method as the second parameter) for smoother scrolling"
+        category="Performance"
+        priority="5"
+        summary="View Holder Candidates"
+        explanation="When implementing a view Adapter, you should avoid unconditionally inflating a new layout; if an available item is passed in for reuse, you should try to use that one instead. This helps make for example ListView scrolling much smoother."
+        url="http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder"
+        urls="http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder"
+        errorLine1="        View view = LayoutInflater.from(context).inflate(R.layout.checked_hoice_item,null);"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/ListChoiceAdapter.java"
+            line="40"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="ViewHolder"
+        severity="Warning"
+        message="Unconditional layout inflation from view adapter: Should use View Holder pattern (use recycled view passed into this method as the second parameter) for smoother scrolling"
+        category="Performance"
+        priority="5"
+        summary="View Holder Candidates"
+        explanation="When implementing a view Adapter, you should avoid unconditionally inflating a new layout; if an available item is passed in for reuse, you should try to use that one instead. This helps make for example ListView scrolling much smoother."
+        url="http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder"
+        urls="http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder"
+        errorLine1="        View view = LayoutInflater.from(context).inflate(R.layout.checked_hoice_item,null);"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/ListChoiceAdapterEdit.java"
+            line="45"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.colorPrimary` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
+        errorLine1="    &lt;color name=&quot;colorPrimary&quot;>#008577&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/values/colors.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.colorPrimaryDark` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
+        errorLine1="    &lt;color name=&quot;colorPrimaryDark&quot;>#00574B&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/values/colors.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.hello_blank_fragment` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true."
+        errorLine1="    &lt;string name=&quot;hello_blank_fragment&quot;>Hello blank fragment&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="IconColors"
+        severity="Warning"
+        message="Notification icons must be entirely white"
+        category="Usability:Icons"
+        priority="6"
+        summary="Icon colors do not follow the recommended visual style"
+        explanation="Notification icons and Action Bar icons should only white and shades of gray. See the Android Design Guide for more details. Note that the way Lint decides whether an icon is an action bar icon or a notification icon is based on the filename prefix: `ic_menu_` for action bar icons, `ic_stat_` for notification icons etc. These correspond to the naming conventions documented in http://developer.android.com/guide/practices/ui_guidelines/icon_design.html"
+        url="http://developer.android.com/design/style/iconography.html"
+        urls="http://developer.android.com/design/style/iconography.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/icon.png"/>
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Service/NotificationService.java"
+            line="241"
+            column="78"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/f.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/f.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/h.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/h.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/i.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/i.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/icon.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/icon.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/t1.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/drawable/t1.png"/>
+    </issue>
+
+    <issue
+        id="GoogleAppIndexingWarning"
+        severity="Warning"
+        message="App is not indexable by Google Search; consider adding at least one Activity with an ACTION-VIEW intent filter. See issue explanation for more details."
+        category="Usability"
+        priority="5"
+        summary="Missing support for Firebase App Indexing"
+        explanation="Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search."
+        url="https://g.co/AppIndexing/AndroidStudio"
+        urls="https://g.co/AppIndexing/AndroidStudio"
+        errorLine1="    &lt;application"
+        errorLine2="    ^">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/AndroidManifest.xml"
+            line="9"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="            &lt;ImageView"
+        errorLine2="             ~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="49"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="            &lt;ImageView"
+        errorLine2="             ~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="70"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        severity="Warning"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;"
+        category="Accessibility"
+        priority="3"
+        summary="Keyboard inaccessible widget"
+        explanation="A widget that is declared to be clickable but not declared to be focusable is not accessible via the keyboard. Please add the `focusable` attribute as well."
+        errorLine1="        android:clickable=&quot;true&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_main.xml"
+            line="29"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        severity="Warning"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;"
+        category="Accessibility"
+        priority="3"
+        summary="Keyboard inaccessible widget"
+        explanation="A widget that is declared to be clickable but not declared to be focusable is not accessible via the keyboard. Please add the `focusable` attribute as well."
+        errorLine1="        android:clickable=&quot;true&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/fragment_news_sources.xml"
+            line="29"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            vh.timeTv.setText(result+&quot;&quot;);"
+        errorLine2="                              ~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/FavoritesAdapter.java"
+            line="70"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            vh.timeTv.setText(result+&quot;&quot;);"
+        errorLine2="                              ~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/LastNewsAdapter.java"
+            line="74"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        vh.timeTv.setText(&quot;بتاريخ : &quot;+newdate);"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Adapter/PreviouesNewsAdapter.java"
+            line="60"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        titleInfo.setText(n.getTitle()+&quot;&quot;);"
+        errorLine2="                          ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="63"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        descriptionInfo.setText(n.getDescription()+&quot;&quot;);"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="64"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        typeInfo.setText(n.getType()+&quot;&quot;);"
+        errorLine2="                         ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="65"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            timeInfo.setText(result+&quot;&quot;);"
+        errorLine2="                             ~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="72"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        titleInfo.setText(n.getTitle()+&quot;&quot;);"
+        errorLine2="                          ~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="78"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        dateinfo.setText(newdate+&quot;&quot;);"
+        errorLine2="                         ~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/java/android/first/app/finalprojectandroid2/Actitvties/infoNews.java"
+            line="91"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Monday&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;Monday&quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_home.xml"
+            line="48"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Tuesday&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;Tuesday&quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_home.xml"
+            line="53"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Wednesday&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;Wednesday&quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_home.xml"
+            line="58"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="29"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="67"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="79"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="93"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="106"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;للمزيد من التفاصيل، اضغط هنا &quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;للمزيد من التفاصيل، اضغط هنا &quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_info_news.xml"
+            line="132"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;التالي&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;التالي&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/activity_main.xml"
+            line="24"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;حفظ&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;حفظ&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/fragment_news_sources.xml"
+            line="24"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="34"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="45"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;TextView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="60"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        severity="Warning"
+        message="When you define `paddingRight` you should probably also define `paddingLeft` for right-to-left symmetry"
+        category="Internationalization:Bidirectional Text"
+        priority="6"
+        summary="Padding and margin symmetry"
+        explanation="If you specify padding or margin on the left side of a layout, you should probably also specify padding on the right side (and vice versa) for right-to-left layout symmetry."
+        errorLine1="        android:paddingRight=&quot;15dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/checked_hoice_item.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider replacing `android:paddingRight` with `android:paddingEnd=&quot;15dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. **NOTE**: If your `minSdkVersion` is less than 17, you should add **both** the older left/right attributes **as well as** the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:paddingRight=&quot;15dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/checked_hoice_item.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. **NOTE**: If your `minSdkVersion` is less than 17, you should add **both** the older left/right attributes **as well as** the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="                android:gravity=&quot;left&quot;"
+        errorLine2="                                 ~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="33"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. **NOTE**: If your `minSdkVersion` is less than 17, you should add **both** the older left/right attributes **as well as** the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="                android:gravity=&quot;right&quot;"
+        errorLine2="                                 ~~~~~">
+        <location
+            file="/Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/src/main/res/layout/last_news_item.xml"
+            line="44"
+            column="34"/>
+    </issue>
+
+</issues>

@@ -25,11 +25,11 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class HomeActivity extends AppCompatActivity {
-    ArrayList<Fragment> screenFragment;
-    ArrayList<String> titleScreenFragment;
-    RequestQueue requestQueue;
-    TabLayout tabLayout;
-    ViewPager viewPager;
+    private ArrayList<Fragment> screenFragment;
+    private ArrayList<String> titleScreenFragment;
+    private RequestQueue requestQueue;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

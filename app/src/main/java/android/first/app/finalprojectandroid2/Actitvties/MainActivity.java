@@ -21,7 +21,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
     private  ListView listView;
    private ArrayList<String> choices;
-    Button next;
+    private Button next;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

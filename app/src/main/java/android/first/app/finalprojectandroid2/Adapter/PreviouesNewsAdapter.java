@@ -77,7 +77,7 @@ public class PreviouesNewsAdapter extends RecyclerView.Adapter<PreviouesNewsAdap
         });
         //**************************************
 
-        SharedPreferences sp =  contxt.getSharedPreferences("Favorites",contxt.MODE_PRIVATE);
+        SharedPreferences sp =  contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
         if(sp.contains("Favorite")){
             Set<String> set1 =  sp.getStringSet("Favorite",null);
             ArrayList<String> listSet = new ArrayList<>(set1);
@@ -98,7 +98,7 @@ public class PreviouesNewsAdapter extends RecyclerView.Adapter<PreviouesNewsAdap
                         if(!LastNewsAdapter.Favorites.contains(n.getTitle())){
                             LastNewsAdapter.Favorites.add(n.getTitle());
                             contxt.getSharedPreferences("Favorites",MODE_PRIVATE).edit().clear();
-                            SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites",contxt.MODE_PRIVATE);
+                            SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             Set<String> set = new HashSet(LastNewsAdapter.Favorites);
                             editor.putStringSet("Favorite", set);
@@ -106,7 +106,7 @@ public class PreviouesNewsAdapter extends RecyclerView.Adapter<PreviouesNewsAdap
                             //*************************
 
                         }
-                        SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites",contxt.MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         Set<String> set = new HashSet(LastNewsAdapter.Favorites);
                         editor.putStringSet("Favorite", set);
@@ -114,13 +114,13 @@ public class PreviouesNewsAdapter extends RecyclerView.Adapter<PreviouesNewsAdap
                     }else{
                         if(LastNewsAdapter.Favorites.contains(n.getTitle())){
                             LastNewsAdapter.Favorites.remove(n.getTitle());
-                            SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites",contxt.MODE_PRIVATE);
+                            SharedPreferences sharedPreferences = contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             Set<String> set = new HashSet(LastNewsAdapter.Favorites);
                             editor.putStringSet("Favorite", set);
                             editor.commit();
                             //**********************************
-                            SharedPreferences sp =  contxt.getSharedPreferences("Favorites",contxt.MODE_PRIVATE);
+                            SharedPreferences sp =  contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
                             if(sp.contains("Favorite")){
                                 Set<String> set2 =  sp.getStringSet("Favorite",null);
                                 ArrayList<String> listSet = new ArrayList<>(set2);

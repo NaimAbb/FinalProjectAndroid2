@@ -40,10 +40,10 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
     /** One day (in milliseconds) */
     private static final int _A_DAY = 24 * _AN_HOUR;
 
-    ArrayList<News> list;
-    int idLayout;
-    Context contxt;
-    GeneralChatFragment generalChatFragment;
+  private   ArrayList<News> list;
+    private int idLayout;
+    private  Context contxt;
+    private GeneralChatFragment generalChatFragment;
     public FavoritesAdapter(ArrayList<News> list , int idLayout, Context contxt , GeneralChatFragment generalChatFragment){
         this.list = list;
         this.idLayout = idLayout;
@@ -55,8 +55,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
     @Override
     public FavoritesAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(idLayout,viewGroup,false);
-        FavoritesAdapter.MyViewHolder vh = new FavoritesAdapter.MyViewHolder(view);
-        return vh;
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -102,7 +101,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
             @Override
             public void onCheckedChanged(View view, boolean checked) {
                     LastNewsAdapter.Favorites.remove(n.getTitle());
-                    SharedPreferences sp = contxt.getSharedPreferences("Favorites", contxt.MODE_PRIVATE);
+                    SharedPreferences sp = contxt.getSharedPreferences("Favorites", MODE_PRIVATE);
                     Set<String> set = sp.getStringSet("Favorite",null);
                     if (set != null){
                         ArrayList<String> list = new ArrayList<>(set);
@@ -142,7 +141,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
     }
 
 
-    public  String getTimeAgo(long time, Context context) {
+    private  String getTimeAgo(long time, Context context) {
 
         final long now =new Date().getTime();
         if (time > now || time <= 0) return "";

@@ -58,8 +58,8 @@ public class LastNewsAdapter extends RecyclerView.Adapter<LastNewsAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(idLayout,viewGroup,false);
-        MyViewHolder vh = new MyViewHolder(view);
-        return vh;
+        MyViewHolder myViewHolder = new MyViewHolder(view);
+        return myViewHolder;
     }
 
     @Override
@@ -111,6 +111,7 @@ public class LastNewsAdapter extends RecyclerView.Adapter<LastNewsAdapter.MyView
         String b=n.getTitle()+"";
         if(a.equalsIgnoreCase(b)){
             vh.shinestar.setOnCheckStateChangeListener(new ShineButton.OnCheckedChangeListener() {
+                @SuppressWarnings("unchecked")
                 @Override
                 public void onCheckedChanged(final View view, boolean checked) {
                     if(checked){

@@ -28,8 +28,8 @@ import java.util.Set;
 
 
 public class GeneralChatFragment extends Fragment {
-    FirebaseFirestore firestore = null;
-    RecyclerView favorites;
+   private FirebaseFirestore firestore = null;
+    private RecyclerView favorites;
     FavoritesAdapter adapter;
      ArrayList<News> listNewsNew;
     public GeneralChatFragment() {
