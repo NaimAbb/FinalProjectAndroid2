@@ -23,11 +23,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: GitHub Action for Android Lint
   # You may pin to the exact commit or the version.
-  # uses: yutailang0119/action-android-lint@f297390fac50d965dd6905b89ea67214e6b30c7c
+  # uses: yutailang0119/action-android-lint@f297390fac50d965dd  6905b89ea67214e6b30c7c
         uses: yutailang0119/action-android-lint@v1.0.2
         with:
           # The file path of the XML lint report produced by gradle
-          xml_path: app/build/lint-results.html
+          xml_path: app/build/reports/lint-results.html
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
