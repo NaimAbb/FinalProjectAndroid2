@@ -27,7 +27,7 @@ jobs:
         uses: yutailang0119/action-android-lint@v1.0.2
         with:
           # The file path of the XML lint report produced by gradle
-          xml_path: /Users/naimabbud/AndroidStudioProjects/FinalProjectAndroid2/app/build
+          xml_path: https://github.com/NaimAbb/FinalProjectAndroid2/blob/master/app/reports  
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
