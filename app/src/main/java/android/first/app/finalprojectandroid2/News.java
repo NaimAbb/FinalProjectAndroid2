@@ -10,6 +10,18 @@ public class News implements Serializable {
     private String description;
     private String urlimage;
 
+    private boolean isFavorite;
+
+    public News() {
+    }
+
+    public News(boolean isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
+    public boolean getIsFavorite() {
+        return isFavorite;
+    }
 
 
     public String getTitle() {

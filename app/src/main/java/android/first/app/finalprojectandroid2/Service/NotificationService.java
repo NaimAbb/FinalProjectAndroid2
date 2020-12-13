@@ -55,13 +55,12 @@ public class NotificationService extends Service {
     }
 
     @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
+    public IBinder onBind(final Intent intent) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public int onStartCommand(final Intent intent, final int flags, int startId) {
         if (isRunning) {
             Log.d("ttt", "runningNotifiaction");
 
@@ -70,7 +69,7 @@ public class NotificationService extends Service {
                 @Override
                 public void run() {
                     while (true) {
-                        for (int i = 0; i < 600 ;i++) {
+                        for (int i = 0; i < 600 ; i++) {
                             try {
                                 Thread.sleep(1000);
                             } catch (InterruptedException e) {
@@ -89,10 +88,10 @@ public class NotificationService extends Service {
                                     e.printStackTrace();
                                 }
 
-                                ArrayList<News> SportNews = getSportNews();
+                                ArrayList<News> sportNews = getSportNews();
                                 try {
                                     Thread.sleep(5000);
-                                    list.addAll(SportNews);
+                                    list.addAll(sportNews);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
@@ -221,7 +220,7 @@ public class NotificationService extends Service {
                                         }
                                         for (News n2:list){
                                             boolean result = false;
-                                            for (int j = 0;j<listSet.size();j++){
+                                            for (int j = 0; j<listSet.size();j++){
                                                 if (listSet.get(j).equalsIgnoreCase(n2.getType())){
                                                     for (News n3:list2){
                                                         if (n2.getTitle().equalsIgnoreCase(n3.getTitle())){
