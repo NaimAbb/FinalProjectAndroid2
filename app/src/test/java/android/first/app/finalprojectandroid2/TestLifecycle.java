@@ -21,7 +21,7 @@ public class TestLifecycle {
     @Before
     public void beforeMethod() {
         System.out.println("Before");
-        news = new News(false);
+        news = new News(true);
 
     }
 

@@ -8,8 +8,8 @@ import android.first.app.finalprojectandroid2.Actitvties.infoNews;
 import android.first.app.finalprojectandroid2.Fragments.GeneralChatFragment;
 import android.first.app.finalprojectandroid2.News;
 import android.first.app.finalprojectandroid2.R;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -51,6 +52,10 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         this.generalChatFragment = generalChatFragment;
     }
 
+    public void setData(@NonNull List<News> items) {
+        this.list.addAll(items); // Prevent possible side-effects.
+        notifyDataSetChanged();
+    }
     @NonNull
     @Override
     public FavoritesAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -124,12 +129,21 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    public  class MyViewHolder extends RecyclerView.ViewHolder{
+        private boolean mIsInTheMiddle = false;
+
         ImageView imageNews;
         TextView nameTv;
         TextView timeTv;
         TextView textNewsTv;
         ShineButton shinestar;
+       public boolean getIsInTheMiddle() {
+            return mIsInTheMiddle;
+        }
+
+        public void setIsInTheMiddle(boolean isInTheMiddle) {
+            mIsInTheMiddle = isInTheMiddle;
+        }
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTv = itemView.findViewById(R.id.nameTv);

@@ -12,14 +12,15 @@ import android.first.app.finalprojectandroid2.Fragments.PreviousNewsFragment;
 import android.first.app.finalprojectandroid2.R;
 import android.first.app.finalprojectandroid2.Service.ServiceConnection;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -35,7 +36,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
         Toolbar toolbar=findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         screenFragment = new ArrayList<>();

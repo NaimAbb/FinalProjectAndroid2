@@ -36,7 +36,7 @@ public class TestParametrizedNotation {
     @Parameterized.Parameters
     public static Collection primeNumbers() {
         return Arrays.asList(new Object[][]{
-                {true, false},
+                {false, false},
                 {false, false},
         });
     }

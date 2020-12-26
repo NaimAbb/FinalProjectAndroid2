@@ -7,4 +7,7 @@
     <string name="just_now">just now</string>
     <string name="time_ago">%s ago</string>
     <string name="yesterday">yesterday</string>
+    <string name="middle">This is the middle!</string>
+    <string name="item_element_text">This is element #</string>
+
 </resources>
